@@ -193,7 +193,9 @@ void RescaledHmmLikelihood::computeForward_()
         tmp[j] = (*emissions)[j] * x;
         if (tmp[j] < 0)
         {
-          (*ApplicationTools::warning << "Negative probability at " << i << ", state " << j << ": " << (*emissions)[j] << "\t" << x).endLine();
+          (*ApplicationTools::warning << "Negative probability at " << (int)i << ", state " << (int)j << ": "
+                                      << (*emissions)[j] << "\t" << x)
+            .endLine();
           tmp[j] = 0;
         }
         scales_[i] += tmp[j];

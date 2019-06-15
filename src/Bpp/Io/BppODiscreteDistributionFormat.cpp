@@ -350,7 +350,7 @@ void BppODiscreteDistributionFormat::write(const DiscreteDistribution& dist,
   {
     if (comma)
       out << ",";
-    out << "n="  << dist.getNumberOfCategories();
+    out << "n=" << (long) dist.getNumberOfCategories();
     comma = true;
   }
 

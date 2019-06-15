@@ -142,6 +142,7 @@ class ReparametrizationFunctionWrapper:
  * currently, only constraint of the type ]a, b[ where a and b can be +/- inf.
  */
 class ReparametrizationDerivableFirstOrderWrapper:
+  public virtual Clonable,
   public virtual DerivableFirstOrder,
   public ReparametrizationFunctionWrapper
 {
@@ -192,12 +193,13 @@ class ReparametrizationDerivableFirstOrderWrapper:
 
 
 /**
- * @brief Function wrapper that remove simple constraints on parameters. Also transform first and second order derivatives.
+ * @brief Function wrapper that remove simple constraints on parameters. Also transforfm first and second order derivatives.
  *
  * This function takes as input another function and reparametrize it when possible.
  * currently, only constraint of the type ]a, b[ where a and b can be +/- inf.
  */
 class ReparametrizationDerivableSecondOrderWrapper:
+  public virtual Clonable,
   public virtual DerivableSecondOrder,
   public ReparametrizationDerivableFirstOrderWrapper
 {
